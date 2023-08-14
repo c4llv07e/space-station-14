@@ -15,11 +15,22 @@ public sealed class DebugMonitorSystem : EntitySystem
     [Dependency] private readonly IClientAdminManager _admin = default!;
     [Dependency] private readonly IUserInterfaceManager _userInterface = default!;
 
-    public override void FrameUpdate(float frameTime)
+    public DebugMonitorSystem()
     {
-        if (!_admin.IsActive() && _cfg.GetCVar(CCVars.DebugCoordinatesAdminOnly))
-            _userInterface.DebugMonitors.SetMonitor(DebugMonitor.Coords, false);
-        else
-            _userInterface.DebugMonitors.SetMonitor(DebugMonitor.Coords, true);
+        IoCManager.InjectDependencies(this);
+        _cfg.OnValueChanged(CCVars.DebugCoordinatesAdminOnly, OnConfigChaged, true);
+        _admin.AdminStatusUpdated += OnAdminEvent;
+    }
+
+    private void OnAdminEvent()
+    {
+        _userInterface.DebugMonitors.SetMonitor(
+            DebugMonitor.Coords,
+            !_cfg.GetCVar(CCVars.DebugCoordinatesAdminOnly) || _admin.IsActive());
+    }
+
+    private void OnConfigChaged(bool value)
+    {
+        _userInterface.DebugMonitors.SetMonitor(DebugMonitor.Coords, !value || _admin.IsActive());
     }
 }
