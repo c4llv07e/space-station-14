@@ -40,3 +40,17 @@
     concerningOrangeFore: "#A5762F"
     dangerousRedFore: "#BB3232"
     disabledFore: "#5A5A5A"
+- type: uiTheme
+  id: SS14OpenSS13Theme
+  path: /Textures/Interface/OpenSS13/
+  colors:
+    whiteText: "#00ff00"
+    slotSelectedGold: "#00ff00"
+    slotColor: "#00ff00"
+    slotOutline: "#00ff00"
+    slotText: "#00ff00"
+    nanoGold: "#00FF00"
+    goodGreenFore: "#00FF00"
+    concerningOrangeFore: "#00FF00"
+    dangerousRedFore: "#00FF00"
+    disabledFore: "#00FF00"

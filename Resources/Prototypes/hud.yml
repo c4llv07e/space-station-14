@@ -12,3 +12,8 @@
   id: 2
   name: ui-options-hud-theme-classic
   path: Classic
+
+- type: hudTheme
+  id: SS14OpenSS13Theme
+  name: ui-options-hud-theme-open-ss13
+  path: Imgui
