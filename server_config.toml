@@ -39,6 +39,10 @@ cryo_sleep_rejoining = true
 arrivals = false
 arrivals_map = false
 
+[atmos]
+space_wind = true
+monstermos_rip_tiles = true
+
 [console]
 # If this is true, people connecting from this machine (loopback)
 # will automatically be elevated to full admin privileges.
