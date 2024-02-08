@@ -35,6 +35,10 @@ enabled = true
 hostname = "MyServer"
 cryo_sleep_rejoining = true
 
+[shuttle]
+arrivals = false
+arrivals_map = false
+
 [console]
 # If this is true, people connecting from this machine (loopback)
 # will automatically be elevated to full admin privileges.
