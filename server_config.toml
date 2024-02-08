@@ -33,15 +33,19 @@ enabled = true
 
 [game]
 hostname = "MyServer"
-cryo_sleep_rejoining = true
+cryo_sleep_rejoining = true # allow users to rejoin after cryo
 
 [shuttle]
-arrivals = false
-arrivals_map = false
+arrivals = false # disable arrivals
+arrivals_map = false # disable arrivals map
+auto_call_time = false # disable auto call shuttle
 
 [atmos]
-space_wind = true
-monstermos_rip_tiles = true
+space_wind = true # enable space wind
+monstermos_rip_tiles = true # enable space wind breaks tiles
+
+[vote]
+enabled = false # disable users vote
 
 [console]
 # If this is true, people connecting from this machine (loopback)
