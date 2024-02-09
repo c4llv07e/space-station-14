@@ -39,6 +39,7 @@ cryo_sleep_rejoining = true # allow users to rejoin after cryo
 arrivals = false # disable arrivals
 arrivals_map = false # disable arrivals map
 auto_call_time = false # disable auto call shuttle
+can_call_emergency = false # disable emergency shuttle call
 
 [atmos]
 space_wind = true # enable space wind
