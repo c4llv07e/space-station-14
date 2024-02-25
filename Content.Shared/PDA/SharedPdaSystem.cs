@@ -1,5 +1,7 @@
 using Content.Shared.Access.Components;
 using Content.Shared.Containers.ItemSlots;
+using Robust.Shared.Serialization;
+using Robust.Shared.GameStates;
 using Robust.Shared.Containers;
 
 namespace Content.Shared.PDA
@@ -19,8 +21,29 @@ namespace Content.Shared.PDA
             SubscribeLocalEvent<PdaComponent, EntInsertedIntoContainerMessage>(OnItemInserted);
             SubscribeLocalEvent<PdaComponent, EntRemovedFromContainerMessage>(OnItemRemoved);
 
+            SubscribeLocalEvent<PdaComponent, ComponentGetState>(GetCompState);
+            SubscribeLocalEvent<PdaComponent, ComponentHandleState>(HandleCompState);
+
             SubscribeLocalEvent<PdaComponent, GetAdditionalAccessEvent>(OnGetAdditionalAccess);
         }
+
+        private void GetCompState(Entity<PdaComponent> ent, ref ComponentGetState args)
+        {
+            args.State = new PdaComponentState
+            {
+                State = ent.Comp.State,
+            };
+        }
+
+        private void HandleCompState(Entity<PdaComponent> ent, ref ComponentHandleState args)
+        {
+            if (args.Current is not PdaComponentState state)
+                return;
+
+            ent.Comp.State = state.State;
+        }
+
+
         protected virtual void OnComponentInit(EntityUid uid, PdaComponent pda, ComponentInit args)
         {
             if (pda.IdCard != null)

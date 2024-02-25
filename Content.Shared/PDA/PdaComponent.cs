@@ -3,6 +3,7 @@ using Robust.Shared.GameStates;
 using Content.Shared.Access.Components;
 using Content.Shared.Containers.ItemSlots;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
+using Robust.Shared.Serialization;
 
 namespace Content.Shared.PDA
 {
@@ -40,5 +41,11 @@ namespace Content.Shared.PDA
         [ViewVariables] public string? StationName;
         [ViewVariables] public string? StationAlertLevel;
         [ViewVariables] public Color StationAlertColor = Color.White;
+    }
+
+    [Serializable, NetSerializable]
+    public sealed class PdaComponentState : ComponentState
+    {
+        public string? State { get; init; }
     }
 }

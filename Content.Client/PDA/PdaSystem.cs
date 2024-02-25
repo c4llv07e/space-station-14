@@ -1,6 +1,7 @@
 using Content.Shared.PDA;
 using Content.Shared.Light;
 using Robust.Client.GameObjects;
+using Robust.Shared.GameStates;
 
 namespace Content.Client.PDA;
 
@@ -23,12 +24,11 @@ public sealed class PdaSystem : SharedPdaSystem
 
         if (Appearance.TryGetData<bool>(uid, PdaVisuals.IdCardInserted, out var isCardInserted, args.Component))
             args.Sprite.LayerSetVisible(PdaVisualLayers.IdLight, isCardInserted);
+        UpdateSprite(uid, component);
     }
 
-    protected override void OnComponentInit(EntityUid uid, PdaComponent component, ComponentInit args)
+    private void UpdateSprite(EntityUid uid, PdaComponent component)
     {
-        base.OnComponentInit(uid, component, args);
-
         if (!TryComp<SpriteComponent>(uid, out var sprite))
             return;
 
@@ -37,6 +37,12 @@ public sealed class PdaSystem : SharedPdaSystem
 
         sprite.LayerSetVisible(PdaVisualLayers.Flashlight, component.FlashlightOn);
         sprite.LayerSetVisible(PdaVisualLayers.IdLight, component.IdSlot.StartingItem != null);
+    }
+
+    protected override void OnComponentInit(EntityUid uid, PdaComponent component, ComponentInit args)
+    {
+        base.OnComponentInit(uid, component, args);
+        UpdateSprite(uid, component);
     }
 
     public enum PdaVisualLayers : byte
