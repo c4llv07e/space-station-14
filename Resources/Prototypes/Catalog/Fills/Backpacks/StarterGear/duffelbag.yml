@@ -6,6 +6,7 @@
   - type: StorageFill
     contents:
       - id: BoxSurvival
+      - id: IndiMedBox
 
 - type: entity
   noSpawn: true
@@ -15,6 +16,7 @@
   - type: StorageFill
     contents:
       - id: BoxHug
+      - id: IndiMedBox
       - id: RubberStampClown
 
 - type: entity
@@ -25,17 +27,20 @@
   - type: StorageFill
     contents:
       - id: BoxSurvivalSecurity
+      - id: IndiMedBox
       - id: Flash
       - id: MagazinePistol
 
 - type: entity
   noSpawn: true
-  parent: ClothingBackpackDuffel
-  id: ClothingBackpackDuffelFilledDetective
+  parent: ClothingBackpackDuffelSecurity
+  id: ClothingBackpackDuffelSecurityFilledDetective
   components:
   - type: StorageFill
     contents:
-      - id: BoxSurvival
+      - id: IndiMedBox
+      - id: BoxSurvivalSecurity
+      - id: Flash
       - id: ForensicPad
       - id: ForensicScanner
 
@@ -47,6 +52,7 @@
   - type: StorageFill
     contents:
       - id: Flash
+      - id: IndiMedBox
 
 - type: entity
   noSpawn: true
@@ -56,6 +62,7 @@
   - type: StorageFill
     contents:
       - id: BoxSurvivalMedical
+      - id: IndiMedBox
 
 - type: entity
   noSpawn: true
@@ -65,6 +72,7 @@
   - type: StorageFill
     contents:
       - id: BoxSurvivalMedical
+      - id: IndiMedBox
       - id: EmergencyRollerBedSpawnFolded
 
 - type: entity
@@ -75,6 +83,7 @@
   - type: StorageFill
     contents:
       - id: BoxSurvival
+      - id: IndiMedBox
       - id: Flash
       #- name: StationCharter
       #- name: TelescopicBaton
@@ -87,6 +96,7 @@
   - type: StorageFill
     contents:
       - id: BoxSurvivalEngineering
+      - id: IndiMedBox
       - id: Flash
       #- id: TelescopicBaton
 
@@ -98,6 +108,7 @@
   - type: StorageFill
     contents:
       - id: BoxSurvival
+      - id: IndiMedBox
       - id: Flash
       #- id: TelescopicBaton
 
@@ -109,6 +120,7 @@
   - type: StorageFill
     contents:
       - id: BoxSurvival
+      - id: IndiMedBox
       - id: Flash
       #- id: TelescopicBaton
 
@@ -120,6 +132,7 @@
   - type: StorageFill
     contents:
       - id: BoxSurvivalMedical
+      - id: IndiMedBox
       - id: Flash
       #- id: TelescopicBaton
 
@@ -131,6 +144,7 @@
   - type: StorageFill
     contents:
       - id: BoxSurvival
+      - id: IndiMedBox
       - id: Flash
       #- id: TelescopicBaton
 
@@ -142,6 +156,7 @@
   - type: StorageFill
     contents:
       - id: BoxSurvivalSecurity
+      - id: IndiMedBox
       - id: Flash
       - id: MagazinePistol
 
@@ -153,6 +168,7 @@
   - type: StorageFill
     contents:
       - id: BoxSurvivalEngineering
+      - id: IndiMedBox
 
 - type: entity
   noSpawn: true
@@ -162,6 +178,7 @@
   - type: StorageFill
     contents:
       - id: BoxSurvivalEngineering
+      - id: IndiMedBox
 
 
 - type: entity
@@ -172,6 +189,7 @@
   - type: StorageFill
     contents:
       - id: BoxSurvival
+      - id: IndiMedBox
 
 - type: entity
   noSpawn: true
@@ -181,6 +199,7 @@
     - type: StorageFill
       contents:
         - id: BoxSurvival
+        - id: IndiMedBox
 
 - type: entity
   noSpawn: true
@@ -190,6 +209,7 @@
   - type: StorageFill
     contents:
       - id: BoxSurvival
+      - id: IndiMedBox
       - id: RubberStampMime
 
 - type: entity
@@ -200,6 +220,7 @@
   - type: StorageFill
     contents:
       - id: BoxSurvivalMedical
+      - id: IndiMedBox
 
 - type: entity
   noSpawn: true
@@ -209,8 +230,19 @@
   - type: StorageFill
     contents:
       - id: BoxSurvival
+      - id: IndiMedBox
       - id: Bible
       - id: RubberStampChaplain
+  
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackDuffel
+  id: ClothingBackpackDuffelLawyerFilled
+  components:
+  - type: StorageFill
+    contents:
+      - id: BoxSurvival
+      - id: RubberStampLawyer
 
 - type: entity
   noSpawn: true
@@ -220,6 +252,7 @@
     - type: StorageFill
       contents:
         - id: BoxSurvival
+        - id: IndiMedBox
         - id: AcousticGuitarInstrument
         - id: SaxophoneInstrument
 
@@ -231,6 +264,7 @@
     - type: StorageFill
       contents:
         - id: BoxSurvival
+        - id: IndiMedBox
         - id: BookRandom
 
 - type: entity
@@ -241,6 +275,7 @@
     - type: StorageFill
       contents:
       - id: BoxSurvival
+      - id: IndiMedBox
       - id: Lighter
       - id: CigPackBlack
       - id: BoxForensicPad
@@ -254,6 +289,7 @@
     - type: StorageFill
       contents:
         - id: BoxSurvival
+        - id: IndiMedBox
 
 - type: entity
   noSpawn: true
@@ -263,3 +299,4 @@
     - type: StorageFill
       contents:
         - id: BoxSurvival
+        - id: IndiMedBox

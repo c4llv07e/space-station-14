@@ -5,7 +5,6 @@
   id: BaseMob
   abstract: true
   components:
-  - type: StatsBoard
   - type: Sprite
     noRot: true
     drawdepth: Mobs
@@ -209,7 +208,7 @@
   - type: Bloodstream
     bloodlossDamage:
       types:
-        Bloodloss: 1
+        Bloodloss: 0.5
     bloodlossHealDamage:
       types:
         Bloodloss: -1

@@ -1,0 +1,132 @@
+[log]
+path = "logs"
+format = "log_%(date)s-%(time)s.txt"
+level = 4
+enabled = true 
+
+[net]
+tickrate = 30
+port = 1213
+bindto = "::,0.0.0.0"
+upnp = false
+log_late_msg = false
+
+[status]
+enabled = true
+
+[dts]
+auto_map_vote_on_round_end = false
+auto_game_mode_vote_on_round_end = false
+
+[game]
+hostname = "🚀[RU][HRP][TTS][WL] Adventure Space! Сервер вечных смен!"
+desc = "Сервер с Whitelist доступом и сменами, которые практически никогда не заканчиваются! Вы не забываете, что было в прошлых сменах! Изменённые механики, отличный ролеплей, крутые ивенты!"
+maxplayers = 40
+soft_max_players = 50
+fallbackenabled = true
+map_pool = "AdventureMapPool"
+# map = "Reach" # see persistence config below
+lobbyenabled = true
+maxcharacterslots = 5
+cryo_sleep_rejoining = true # allow users to rejoin after cryo
+research_modifier = 0.1
+# https://github.com/space-wizards/space-station-14/pull/20770
+usepersistence = true # enables persistence map save
+persistencemap = "CorvaxDelta" # default map if persistence file doesn't exists
+map = "/persist_map.yml" # *PATH* to the persistence file
+
+[metrics]
+enabled = true
+# Address to bind the metrics server to, use "*" for all local interfaces
+host = "*"
+# Port to bind the metrics server to
+port = 44881
+
+[shuttle]
+arrivals = false # disable arrivals
+arrivals_map = false # disable arrivals map
+auto_call_time = false # disable auto call shuttle
+can_call_emergency = false # disable emergency shuttle call
+emergency_early_launch_allowed = true
+
+[atmos]
+space_wind = true # enable space wind
+monstermos_rip_tiles = true # enable space wind breaks tiles
+
+[console]
+loginlocal = false
+login_host_user = "DTS"
+
+[hub]
+advertise = true
+tags = "lang:ru, rp:hrp, region:eu_e"
+server_url = "ss14://adven.space:1213"
+hub_urls = "https://central.spacestation14.io/hub/"
+
+[auth]
+mode = 1
+allowlocal = false
+
+[infolinks]
+discord = "https://discord.gg/AdvSpace"
+wiki = "https://adventure-space.ru/"
+
+[vote]
+enabled = false # disable users vote
+map_enabled = false
+preset_enabled = false
+
+[server]
+id = "AdventureSpace14DTSEVG"
+rules_file = "RulesAdventure.txt"
+rules_header = "Adventure Space"
+
+# [admin]
+# see_own_notes = true
+
+[looc]
+enabled_crit = false
+
+[database]
+engine = "postgres"
+pg_host = "localhost"
+# pg_port = ""
+pg_database = "ss14"
+pg_username = "ss14"
+pg_password = "BafUYwXEvMJpVF0"
+
+[watchdog]
+token = "bsuwklb6qmyf1"
+key = "mapping"
+baseUrl = "http://localhost:5000/"
+
+[discord]
+ahelp_webhook = "https://discord.com/api/webhooks/1209552667731558460/6-bQgSS3AOP_NHASDHrR8g3DdurNyEdeQyXYiLCMqB6OBvpCBnVCnqyrwbAiXIjlWVSK"
+
+[rules]
+time = 1.0
+
+[discord_auth]
+enabled = true
+api_url = "https://shizainc.com/ss14_adventure_space_api"
+api_key = "test"
+
+[queue]
+enabled = true
+
+[sponsor]
+api_url = "https://shizainc.com/ss14_adventure_space_api"
+
+[whitelist]
+enabled = true
+reason = "Это сервер для маппинга администраторов"
+
+[greetings]
+enable = false
+
+[tts]
+enabled = true
+api_url = "https://ntts.fdev.team/api/v1/tts"
+api_token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjcHIiOjUwMCwiZHByIjowLCJleHAiOjE3MDMwMzA0NjAsIm5hbWUiOiJBZHZlbnR1cmUgU3BhY2UiLCJycHMiOjF9.mB41fvNoD-_XGmQSpXFDOXrp1gdRy_nH7rq6Pe4-hJ4"
+max_cache = 30000
+announce_voice = "Astrid"

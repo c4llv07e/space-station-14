@@ -212,6 +212,9 @@ namespace Content.Server.Communications
             if (_emergency.EmergencyShuttleArrived || !_roundEndSystem.CanCallOrRecall())
                 return false;
 
+            if (!_cfg.GetCVar(CCVars.CanCallEmergency))
+                return false;
+
             // Calling shuttle checks
             if (_roundEndSystem.ExpectedCountdownEnd is null)
                 return comp.CanShuttle;
@@ -315,6 +318,9 @@ namespace Content.Server.Communications
             };
 
             _deviceNetworkSystem.QueuePacket(uid, null, payload, net.TransmitFrequency);
+
+            if (message.Session.AttachedEntity != null)
+                _adminLogger.Add(LogType.DeviceNetwork, LogImpact.Low, $"{ToPrettyString(message.Session.AttachedEntity.Value):player} has sent the following broadcast: {message.Message:msg}");
         }
 
         private void OnCallShuttleMessage(EntityUid uid, CommunicationsConsoleComponent comp, CommunicationsConsoleCallEmergencyShuttleMessage message)

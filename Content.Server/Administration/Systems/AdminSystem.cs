@@ -137,7 +137,7 @@ namespace Content.Server.Administration.Systems
             return value ?? null;
         }
 
-        private void OnIdentityChanged(IdentityChangedEvent ev)
+        private void OnIdentityChanged(ref IdentityChangedEvent ev)
         {
             if (!TryComp<ActorComponent>(ev.CharacterEntity, out var actor))
                 return;
@@ -239,7 +239,7 @@ namespace Content.Server.Administration.Systems
 
             // Alteros-Sponsors-start
             var sponsors = IoCManager.Resolve<IServerSponsorsManager>();
-            bool isSponsor = sponsors.IsSponsor(data.UserId);
+            var isSponsor = sponsors.IsSponsor(data.UserId);
             sponsors.TryGetOocTitle(data.UserId, out var sponsorTitle);
 
             return new PlayerInfo(name, entityName, identityName, startingRole, antag, GetNetEntity(session?.AttachedEntity), data.UserId,
